@@ -13,12 +13,15 @@ import { Loading } from "./src/components/Loading";
 
 import { CartContextProvider } from "./src/contexts/CartContext";
 import { OneSignal } from "react-native-onesignal";
+import { tagUserEmailCreate } from "./src/notifications/notificationsTags";
 
 OneSignal.initialize("1d935d9f-e08b-46c7-937e-19216a1488b8");
 OneSignal.User.addEmail("gabrielcomputacao@outlook.com");
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
+
+  tagUserEmailCreate("gabrielcomputacao@outlook.com");
 
   // useEffect(() => {
   //   onesignalInitialize();
